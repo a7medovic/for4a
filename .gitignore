@@ -1,0 +1,505 @@
+/**
+ * Femtoslider - An open source jquery slider is beautiful 
+ * Nice features such as full width and 
+ * @author      Baianat
+ * @copyright   2015 Baianat
+ * @link        http://www.baianat.com
+ * @license     MIT permissive license http://www.baianat.com
+ * @version     1.0.0 beta ver.
+ * @package     Femtoslider
+ * 
+ */
+
+
+.slide img {
+    height: 100%;
+    width: 100%;
+}
+
+.prev.slide .container {
+    left: -100%;
+    opacity: 0;
+}
+
+.next.slide .container {
+    left: 100%;
+    opacity: 0;
+}
+
+.slide {
+    -moz-transition:    all .8s ease-in-out;
+    -webkit-transition: all .8s ease-in-out;
+    -o-transition:      all .8s ease-in-out;
+    -ms-transition:     all .8s ease-in-out;
+    transition:         all .8s ease-in-out;
+}
+
+.box > div {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+.slide p.h2 div {
+    position: relative;
+    display: inline-block;
+    float: left;
+    padding-right: 10px;
+}
+
+.slide p.h2 div span {
+    position: relative;
+    left: 0;
+    top: 0;
+}
+
+.prev.slide p.h2 div span, .next.slide p.h2 div span {
+    opacity: 0;
+}
+
+.box .dots li {
+    border: 1px solid #02bbd3;
+}
+
+.box .dots li.active {
+    background: #02bbd3;
+}
+
+#mySlider > .indicator {
+    background: #ff006e;
+    box-shadow: 0 0 3px #ff006e;
+}
+
+#slider2 > .indicator {
+    background: #9fd302;
+    box-shadow: 0 0 3px #9fd302;
+}
+
+#slider3 .arrows {
+    top: calc(100% - 85px);
+    border: 1px solid #772953;
+    height: 70px;
+    width: 70px;
+}
+
+#slider3 .arrows.left {
+    left: calc(50% - 140px);
+}
+
+#slider3 .arrows.right {
+    right: calc(50% - 140px);
+}
+
+
+#nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-width: 520px;
+    overflow: visible;
+    height: 50px;
+    z-index: 100000;
+    border-bottom: 1px solid #9fd302;
+    padding: 0;
+}
+
+#nav li {
+    cursor: pointer;
+    display: inline-block;
+    float: left;
+    color: #fff;
+    line-height: 3;
+    height: 50px;
+    min-width: 100px;
+    font-size: 18px;
+    text-align: center;
+    border-right: 1px solid #9fd302;
+}
+
+#nav li.active {
+    background: rgba(159, 211, 2, 1);
+}
+
+p.content {
+    position: absolute;
+    top: 20%;
+    width: 70%;
+    height: 60%;
+    padding: 10% 15%;
+    color: #fff;
+}
+
+
+.centerize {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+.femtoSlider {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+}
+
+.slides {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+
+    -webkit-perspective: 1000;
+    -moz-perspective: 1000;
+    -ms-perspective: 1000;
+    -o-perspective: 1000;
+    perspective: 1000;
+
+    -webkit-perspective-origin: 50% 50%;
+    -moz-perspective-origin: 50% 50%;
+    -ms-perspective-origin: 50% 50%;
+    -o-perspective-origin: 50% 50%;
+    perspective-origin: 50% 50%;
+
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+
+.slide {
+    position: relative;
+}
+
+
+.fs-controls {
+    position: absolute;
+    z-index: 10000;
+}
+
+.links {
+    top: 10px;
+    left: 160px;
+}
+
+.links li {
+    color: #000;
+}
+
+.links li.active {
+    color: #fff;
+}
+
+.dots {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    background: rgba(0, 0, 0, .5);
+}
+
+.dots.top, .dots.bottom {
+    width: 100%;
+    height: 50px;
+}
+
+.dots.left, .dots.right {
+    height: 100%;
+    width: 50px;
+}
+
+.dots.bottom { bottom: 0; }
+.dots.top { top: 0; }
+
+.dots.left { left: 0; }
+.dots.right { right: 0; }
+
+.dots li {
+    cursor: pointer;
+    outline: none;
+
+    border-radius: 50px;
+
+    height: 10px;
+    width: 10px;
+
+    background: none;
+    border: 1px solid #fff;
+}
+
+.dots li.active {
+    background: #fff;
+}
+
+.bottom li, .top li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.right li, .left li {
+    display: block;
+    margin: 1.5em auto;
+}
+
+.right li:first-child, .left li:first-child {
+    margin-top: 60px;
+}
+
+.indicator {
+    background: #fff;
+    box-shadow: 0 0 3px #fff;
+}
+
+ Arrows 
+
+.arrows {
+    position: absolute;
+    top: calc(50% - 30px);
+    height: 80px;
+    width: 80px;
+    outline: none;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    opacity: .7;
+}
+
+.arrows:hover {
+    opacity: 1;
+}
+
+.arrows.left {
+    left: 40px;
+}
+
+.arrows.right {
+    right: 40px;
+}
+
+.arrows.right:before,
+.arrows.left:before,
+.arrows.up:before,
+.arrows.down:before {
+    content: '';
+    position: absolute;
+    top: 30%;
+    left: 20%;
+    height: 40%;
+    width: 40%;
+
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.arrows.right:before {
+    border-top: 1px solid #fff;
+    border-right: 1px solid #fff;
+}
+
+.arrows.left:before {
+    left: 40%;
+    border-bottom: 1px solid #fff;
+    border-left: 1px solid #fff;
+}
+
+.arrows.down {
+    top: calc(100% - 120px);
+}
+
+.timer {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    box-shadow: 0 0 10px #fff;
+}
+
+.pause {
+    position: absolute;
+    bottom: 20px;
+    left: calc(50% - 30px);
+    width: 60px;
+    height: 60px;
+    z-index: 10000;
+    cursor: pointer;
+    border-radius: 50%;
+
+    font-size: 24px;
+    text-align: center;
+    line-height: 74px;
+
+    background: rgba(0, 0, 0, .5);
+
+    color: #9fd302;
+    box-shadow: 0 0 4px #9fd302;
+
+}
+
+.pause.play:before {
+    content: '';
+    position: absolute;
+    z-index: 100;
+    height: 50%;
+    width: 30%;
+    left: calc(40% - 4px);
+    top: 25%;
+
+    border-left: 2px solid #ff006e;
+    border-right: 2px solid #ff006e;
+
+    border-top: none;
+    border-bottom: none;
+
+    -webkit-transform: rotate(0);
+    -moz-transform: rotate(0);
+    -ms-transform: rotate(0);
+    -o-transform: rotate(0);
+    transform: rotate(0);
+}
+
+.pause.play {
+    color: #ff006e;
+    box-shadow: 0 0 4px #ff006e;
+}
+
+.pause:before {
+    content: '';
+    position: absolute;
+    z-index: 100;
+    height: 40%;
+    width: 40%;
+
+    width: 0;
+    height: 0;
+
+    left: 20px;
+    top: 11px;
+
+    border-top: 20px solid transparent;
+    border-left: 30px solid #9fd302;
+    border-bottom: 20px solid transparent;
+
+    -moz-transition:    all .4s ease;
+    -webkit-transition: all .4s ease;
+    -o-transition:      all .4s ease;
+    -ms-transition:     all .4s ease;
+    transition:         all .4s ease;
+}
+
+.slide ul.list {
+    margin: 20px 30px;
+}
+
+ul.list li {
+    list-style: disc;
+}
+
+ul.links {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+}
+
+ul.links li p {
+    display: inline-block;
+    margin: 0 10px;
+    opacity: 0;
+    font-size: 2em;
+}
+
+ul.links li span {
+    display: inline-block;
+    margin: 0 10px;
+    height: 8px;
+    width: 8px;
+    border: 1px solid #fff;
+    border-radius: 20px;
+    background: none;
+}
+
+ul.links li.active span {
+    background: #fff;
+}
+
+ul.links li.active p {
+    opacity: 1;
+}
+
+i {
+    font-size: .8em;
+}
+
+
+img#next {
+    position: absolute;
+    height: 200px;
+    width: 200px;
+
+    opacity: 0;
+
+    border-radius: 50%;
+    overflow: hidden;
+
+    z-index: 10000;
+
+    right: 150px;
+    top: calc(50% - 100px);
+
+}
+
+img#prev {
+    position: absolute;
+    height: 200px;
+    width: 200px;
+
+    opacity: 0;
+
+
+    border-radius: 50%;
+    overflow: hidden;
+
+    z-index: 10000;
+
+    left: 150px;
+    top: calc(50% - 100px);
+}
+
+
+
+.slide img, .slide h2 {
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    transition: all 1s ease;
+}
+
+
+
+.nested_slider .slide .container
+{
+    height: 100% ;
+}
+
+
